@@ -1,6 +1,6 @@
 import { Box, Typography } from '@mui/material';
 import { useHistory } from 'react-router-dom';
-import { containerStyles } from './styles.ts';
+import { containerStyles } from './styles';
 export const NavigationCard = (props: any) => {
   const { name, route } = props;
   const history = useHistory();

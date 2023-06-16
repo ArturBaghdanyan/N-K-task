@@ -120,14 +120,13 @@ export const Tasks = () => {
       }
     };
 
+
   const handleCancelEdit = () => {
     setValidationErrors({});
   };
 
   const handleDeleteTask = async (row: any) => {
-    const {
-      original: { id },
-    } = row;
+    const { original: { id } } = row;
     try {
       await TaskService.deleteTask(id);
       setSnackbar({
@@ -148,7 +147,6 @@ export const Tasks = () => {
         onBlur: (event: any) => {
           const isValid = validateRequired(event.target.value);
           if (!isValid) {
-            //set validation error for cell if invalid
             setValidationErrors({
               ...validationErrors,
               [cell.id]: `${cell.column.columnDef.header} is required`,
@@ -222,6 +220,7 @@ export const Tasks = () => {
     ],
     [getCommonEditTextFieldProps, employees]
   );
+
 
   return (
     <Box sx={containerStyle}>
